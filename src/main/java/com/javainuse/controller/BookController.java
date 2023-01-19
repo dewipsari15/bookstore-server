@@ -28,7 +28,7 @@ public class BookController {
 
     // -------------------Create a Product-------------------------------------------
 
-    @RequestMapping(value = "/book/", method = RequestMethod.POST, produces = "application/json")
+    @RequestMapping(value = "/book/add", method = RequestMethod.POST, produces = "application/json")
     public ResponseEntity<?> createProduct(@RequestBody BookDTO product) throws SQLException, ClassNotFoundException {
         logger.info("Creating Product : {}", product);
 
@@ -40,7 +40,7 @@ public class BookController {
 
     // -------------------Retrieve All Products--------------------------------------------
 
-    @RequestMapping(value = "/books/", method = RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value = "/book", method = RequestMethod.GET, produces = "application/json")
     public ResponseEntity<List<DAOBook>> listAllProducts() throws SQLException, ClassNotFoundException {
 
         List<DAOBook> products = productDetailService.findAll();
